@@ -1,0 +1,37 @@
+<!-- attendance-record-form.component.html -->
+
+<form [formGroup]="formGroup" (ngSubmit)="submitForm()">
+  <div class="wrapper">
+    <div class="title">
+      <h1>Attendance Record Form</h1>
+    </div>
+    <div class="contact-form">
+      <div class="input-fields">
+        <!-- You can use appropriate form controls for the data types -->
+        <!-- <input type="text" class="input" placeholder="Student ID" formControlName="studentId"> -->
+
+        <label for="students">Students:</label>
+        <select formControlName="student" >
+          <option *ngFor="let student of students" [value]="student.id">{{student.firstName}}</option>
+        </select>
+
+
+        <!-- <input type="text" class="input" placeholder="Course ID" formControlName="courseId"> -->
+
+        <label for="courses">Courses:</label>
+        <select formControlName="course" >
+          <option *ngFor="let course of courses" [value]="course.id">{{course.courseName}}</option>
+        </select>
+
+
+
+        <!-- You may want to use a date picker for the date -->
+        <input type="date" class="input" placeholder="Date" formControlName="date">
+        <input type="text" class="input" placeholder="Status" formControlName="status">
+      </div>
+      <div class="msg">
+        <div class="btn" (click)="submitForm()">Submit</div>
+      </div>
+    </div>
+  </div>
+</form>

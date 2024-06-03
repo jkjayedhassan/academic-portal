@@ -1,0 +1,23 @@
+<!-- assignment-form.component.html -->
+<form [formGroup]="formGroup" (ngSubmit)="submitForm()">
+    <div class="wrapper">
+      <div class="title">
+        <h1>Assignment Form</h1>
+      </div>
+      <div class="contact-form">
+        <div class="input-fields">
+          <label for="course">Course:</label>
+          <select formControlName="course">
+            <option *ngFor="let course of courses" [value]="course.id">{{ course.courseName }}</option>
+          </select>
+          <input type="text" class="input" placeholder="Title" formControlName="title">
+          <textarea class="input" placeholder="Description" formControlName="description"></textarea>
+          <input type="text" class="input" placeholder="Due Date" formControlName="dueDate">
+        </div>
+        <div class="msg">
+          <div class="btn" (click)="submitForm()">Submit</div>
+        </div>
+      </div>
+    </div>
+  </form>
+  

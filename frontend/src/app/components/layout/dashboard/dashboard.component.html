@@ -1,0 +1,128 @@
+<mat-sidenav-container class="sidenav-container" *ngIf="config.shouldRun" [hasBackdrop]="config.hasBackdrop">
+    <mat-sidenav #sidenav [mode]="config.mode" [position]="config.position" [opened]="config.isOpened" class="sidenav">
+        <div class="profile-content">
+            <img src="assets/logo.png" alt="App Logo" class="app-logo">
+            <h2 class="app-name">Academic Portal</h2>
+        </div>
+        <mat-nav-list>
+            <a mat-list-item [routerLink]="'dashboard'">Home</a>
+            <mat-expansion-panel class="menu-item">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>Authority</mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-nav-list>
+                    <mat-expansion-panel class="submenu-item">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>Permission</mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <a mat-list-item [routerLink]="'permission-form'">Permission Form</a>
+                        <a mat-list-item [routerLink]="'permission-list'">Permission List</a>
+                    </mat-expansion-panel>
+                    <mat-expansion-panel class="submenu-item">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>User</mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <a mat-list-item [routerLink]="'user-form'">User Form</a>
+                        <a mat-list-item [routerLink]="'user-list'">User List</a>
+                    </mat-expansion-panel>
+                    <mat-expansion-panel class="submenu-item">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>Role</mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <a mat-list-item [routerLink]="'role-form'">Role Form</a>
+                        <a mat-list-item [routerLink]="'role-list'">Role List</a>
+                    </mat-expansion-panel>
+                </mat-nav-list>
+            </mat-expansion-panel>
+            <mat-expansion-panel class="menu-item">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>Academic Activity</mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-nav-list>
+                    <mat-expansion-panel class="submenu-item">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>Student</mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <a mat-list-item [routerLink]="'student-form'">Student Form</a>
+                        <a mat-list-item [routerLink]="'student-list'">Student List</a>
+                        <a mat-list-item [routerLink]="'attendance-record-form'">Attendance Record</a>
+                        <a mat-list-item [routerLink]="'attendance-record-list'">Attendance List</a>
+                    </mat-expansion-panel>
+                    <mat-expansion-panel class="submenu-item">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>Teacher</mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <a mat-list-item [routerLink]="'teacher-form'">Teacher Form</a>
+                        <a mat-list-item [routerLink]="'teacher-list'">Teacher List</a>
+                    </mat-expansion-panel>
+                    <mat-expansion-panel class="submenu-item">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>Course</mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <a mat-list-item [routerLink]="'course-form'">Course Form</a>
+                        <a mat-list-item [routerLink]="'course-list'">Course List</a>
+                        <a mat-list-item [routerLink]="'course-enrollment'">Enrollment</a>
+                    </mat-expansion-panel>
+                    <mat-expansion-panel class="submenu-item">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>Assignment</mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <a mat-list-item [routerLink]="'assignment-form'">Assignment Form</a>
+                        <a mat-list-item [routerLink]="'assignment-sub-form'">Assignment Submission</a>
+                        <a mat-list-item [routerLink]="'assignment-sub-list'">Assignment List</a>
+                    </mat-expansion-panel>
+                    <mat-expansion-panel class="submenu-item">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>Exam Portal</mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <a mat-list-item [routerLink]="'exam-schedule-form'">Exam Schedule Form</a>
+                        <a mat-list-item [routerLink]="'exam-schedule-list'">Exam Schedule List</a>
+                    </mat-expansion-panel>
+                </mat-nav-list>
+            </mat-expansion-panel>
+            <mat-expansion-panel class="menu-item">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>Project Data</mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-nav-list>
+                    <mat-expansion-panel class="submenu-item">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>Submenu 3.2</mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <a mat-list-item>Subsubmenu 3.2.1</a>
+                        <a mat-list-item>Subsubmenu 3.2.2</a>
+                    </mat-expansion-panel>
+                </mat-nav-list>
+            </mat-expansion-panel>
+            <mat-expansion-panel class="menu-item">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>Location</mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-nav-list>
+                    <mat-expansion-panel class="submenu-item">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>Location</mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <a mat-list-item [routerLink]="'location-form'">Location Form</a>
+                        <a mat-list-item [routerLink]="'location-list'">Location List</a>
+                    </mat-expansion-panel>
+                </mat-nav-list>
+            </mat-expansion-panel>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar class="toolbar">
+            <button mat-icon-button (click)="sidenav.toggle()" aria-label="Toggle Sidenav">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span>Academic Portal</span>
+            <span class="spacer"></span>
+            <button mat-icon-button aria-label="Logout" (click)="logout()">
+                <mat-icon>logout</mat-icon>
+            </button>
+        </mat-toolbar>
+        <div class="page-body">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,36 @@
+<div class="container" >
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <mat-card>
+        <!-- <img src="assets/images/logo.png" alt="logo" class="img-fluid w-100"> -->
+        <mat-card-header class="text-center">
+          <mat-card-title class="login-title">
+            <h3>Login</h3>
+          </mat-card-title>
+        </mat-card-header>
+        
+        
+        <mat-card-content >
+          <form [formGroup]="loginForm" (ngSubmit)="login()" >
+            <mat-form-field appearance="outline" class="w-100" style="font-family: 'Kaushan Script', cursive;">
+              <mat-label>User ID/Email</mat-label>
+              <input  matInput formControlName="username" placeholder="Enter your User ID or Email" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="w-100" style="font-family: 'Kaushan Script', cursive;">
+              <mat-label>Password</mat-label>
+              <input matInput formControlName="password" type="password" class="form-control" id="password"
+                placeholder="Enter your password" required>
+            </mat-form-field>
+            <button mat-raised-button color="primary" class="btn-block">Login</button>
+          </form>
+        </mat-card-content>
+
+      </mat-card>
+      
+    </div>
+  </div>
+</div>
+
+<div style="background-color: black;">
+
+</div>
